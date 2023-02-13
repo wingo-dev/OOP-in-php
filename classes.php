@@ -70,3 +70,26 @@ class CreditCard
     }
 
 }
+
+// interfaces
+interface Animal
+{
+    public function makeSound();
+}
+
+class Dog implements Animal
+{
+    public function makeSound()
+    {
+        return "Bark";
+    }
+}
+
+class Cat implements Animal
+{
+    public function makeSound()
+    {
+        return "Meow";
+    }
+}
+

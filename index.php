@@ -14,4 +14,11 @@ $ccObj->setPin("3344");
 $ccObj->shopping("1111222233334444", "3344", 490);
 $ccObj->getTotalBalance();
 
-?>
+
+// interface test
+
+$dog = new Dog();
+$cat = new Cat();
+
+echo $dog->makeSound();
+echo $cat->makeSound();
