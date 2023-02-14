@@ -3,18 +3,15 @@
 class Test
 {
     public $name;
-    public function __construct($name)
-    {
-        $this->name = $name;
-    }
 
-    public function __toString()
+    public function __invoke()
     {
-        return "My name is" . $this->name;
+        echo "I can act as a function now...";
     }
 
 }
 
-$obj = new Test("Tim");
-echo $obj;
-// __toString allows object to string.
+
+$o = new Test;
+
+$o();
