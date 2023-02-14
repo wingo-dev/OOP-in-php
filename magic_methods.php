@@ -1,17 +1,22 @@
 <?php
 
-class Test
+class Student
 {
+    private $id;
     public $name;
 
-    public function __invoke()
+    public function __construct($id, $name)
     {
-        echo "I can act as a function now...";
+        $this->id = $id;
+        $this->name = $name;
+    }
+
+    public function __debugInfo()
+    {
+        return [
+            'student Id' => $this->$id * 2,
+            'address' => 'adb'
+        ];
     }
 
 }
-
-
-$o = new Test;
-
-$o();
