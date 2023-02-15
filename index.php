@@ -1,5 +1,16 @@
 <?php
-require('./classes.php');
+// autoload
+
+function loader($class)
+{
+    $filename = $class . '.php';
+    if (!file_exists($filename)) {
+        return false;
+    }
+    include $filename;
+}
+
+spl_autoload_register('loader');
 
 $myMoney = new Account();
 $myMoney->deposit(40);
