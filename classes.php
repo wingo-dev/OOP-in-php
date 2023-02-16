@@ -93,3 +93,24 @@ class Cat implements Animal
     }
 }
 
+class Student
+{
+    private $name;
+    private $id;
+    public function __constructor($name, $id)
+    {
+        $this->name = $name;
+        $this->id = $id;
+    }
+
+    public function getInfo()
+    {
+        return $this->name;
+    }
+
+    public function __sleep()
+    {
+        echo "It is serialize test!";
+
+    }
+}
