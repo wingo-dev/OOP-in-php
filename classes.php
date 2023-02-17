@@ -93,24 +93,34 @@ class Cat implements Animal
     }
 }
 
-class Student
+class Student implements Serializable
 {
     private $name;
     private $id;
+
     public function __constructor($name, $id)
     {
         $this->name = $name;
         $this->id = $id;
+
     }
 
     public function getInfo()
     {
-        return $this->name;
+        return "Name: " . $this->name . ", ID: " . $this->id;
     }
 
-    public function __sleep()
+    public function serialize()
     {
-        echo "It is serialize test!";
-
+        return serialize([$this->name, $this->id]);
     }
+    public function unserialize($data)
+    {
+        list($this->name, $this->id) = unserialize($data);
+    }
+    // public function __sleep()
+    // {
+    //     echo "It is serialize test!";
+
+    // }
 }
